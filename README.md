@@ -1,4 +1,3 @@
-@@ -0,0 +1,821 @@
 # Active Directory IAM Lab --- Windows Server 2025 on Microsoft Azure
 
 > **Hands-on Identity & Access Management lab demonstrating Active
@@ -169,6 +168,11 @@ flowchart TB
 
 Create a Windows Server VM in Azure.
 
+    Click Virtual machine
+<img width="857" height="266" alt="VM1" src="https://github.com/user-attachments/assets/a36072ba-6d02-4ff4-a5aa-a3f51441123d" />
+
+    Create -> Virtual Machine
+<img width="707" height="404" alt="VM2" src="https://github.com/user-attachments/assets/d9c3fe9b-827a-4cb0-99fd-04e273e2b116" />
 Recommended lab configuration:
 
   Setting          Value
@@ -179,6 +183,22 @@ Recommended lab configuration:
   Authentication   Password
   Inbound Port     RDP --- TCP 3389
   OS Disk          Standard SSD
+
+<img width="676" height="545" alt="VM4" src="https://github.com/user-attachments/assets/5afa269c-1b77-4a36-abb7-7a4c66bb2a65" />
+
+<img width="596" height="552" alt="vm5" src="https://github.com/user-attachments/assets/2a526266-8b52-4bfe-b127-372d361b598c" />
+
+<img width="1096" height="413" alt="VM6" src="https://github.com/user-attachments/assets/85267489-5431-47af-9ebf-f6a6e5b8e840" />
+
+<img width="981" height="244" alt="VM7" src="https://github.com/user-attachments/assets/8264e8e4-a2e2-4e28-94a0-4b48910465d5" />
+
+<img width="886" height="501" alt="VM8" src="https://github.com/user-attachments/assets/469d0668-67d8-4513-96c6-77d264b0a846" />
+
+<img width="598" height="309" alt="VM9" src="https://github.com/user-attachments/assets/74f06a5d-66d9-4139-aa48-f200be0cfff7" />
+
+<img width="425" height="340" alt="VM10" src="https://github.com/user-attachments/assets/9e5b3cb4-6c79-4554-a871-bc87b28cd573" />
+
+<img width="923" height="553" alt="VM11" src="https://github.com/user-attachments/assets/713ac17f-56e9-4e37-8f9b-28f3b84d6ab7" />
 
 After deployment, connect to the server using the VM's public IP address
 and the native Windows Remote Desktop client.
