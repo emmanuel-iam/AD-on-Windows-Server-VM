@@ -215,7 +215,9 @@ Remote Desktop Connection
 → Local devices and resources
 → Enable Clipboard
 ```
+<img width="314" height="173" alt="VM12" src="https://github.com/user-attachments/assets/0ef7c058-9419-41bc-9f99-1d1e91106f62" />
 
+<img width="301" height="374" alt="vm13" src="https://github.com/user-attachments/assets/22e42a73-b64a-4356-b5be-7c55c608158c" />
 This allows commands to be copied between the local workstation and the
 lab VM.
 
@@ -240,13 +242,24 @@ Manage
 → Install
 ```
 
+<img width="797" height="371" alt="vm14" src="https://github.com/user-attachments/assets/897a29c4-2257-48bf-8e00-0c0c9238d9d1" />
+<img width="526" height="426" alt="vm15" src="https://github.com/user-attachments/assets/ddcff715-e811-49f7-a81d-291b98a145c8" />
+<img width="346" height="325" alt="vm16" src="https://github.com/user-attachments/assets/3deeaf52-3958-463f-8ff2-3a997547a4ed" />
+<img width="599" height="430" alt="vm17" src="https://github.com/user-attachments/assets/7364f748-3383-49c8-8cf7-b14ce0784f44" />
+
 PowerShell alternative:
 
 ``` powershell
 Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 ```
+<img width="591" height="548" alt="vm18" src="https://github.com/user-attachments/assets/0cbea021-68b4-4280-945d-2db0ea8c5dea" />
+<img width="958" height="550" alt="vm19" src="https://github.com/user-attachments/assets/a333fe08-0d0d-4d48-9af1-4793594cd769" />
 
 Install the Group Policy Management Console:
+
+<img width="439" height="334" alt="vm20" src="https://github.com/user-attachments/assets/cb1ee2cc-3ff4-4803-93b6-b4e27eba84f7" />
+<img width="574" height="424" alt="vm21" src="https://github.com/user-attachments/assets/cde65313-b597-4e59-824f-854ba167fc04" />
+
 
 ``` powershell
 Install-WindowsFeature -Name GPMC
