@@ -115,9 +115,10 @@ flowchart TB
 
   IAM / Infrastructure Concept   Implementation
   ------------------------------ -----------------------------------------------
-  Centralized Identity           Active Directory Domain Services
-  Authentication                 Windows domain authentication
-  Directory Services             `lab.local` Active Directory domain
+  
+   Centralized Identity           Active Directory Domain Services
+   Authentication                 Windows domain authentication
+   Directory Services             `lab.local` Active Directory domain
   Identity Organization          Department-based Organizational Units
   RBAC                           Global security groups mapped to departments
   Least Privilege                Access assigned through role/group membership
@@ -143,22 +144,6 @@ flowchart TB
 -   Windows PowerShell
 -   Remote Desktop Protocol (RDP)
 -   Azure Virtual Machines
-
-------------------------------------------------------------------------
-
-## Lab Environment
-
-  Component               Configuration
-  ----------------------- -----------------------------------------
-  Cloud Platform          Microsoft Azure
-  Server OS               Windows Server 2025 Datacenter --- Gen2
-  VM Size                 Standard_B2s --- 2 vCPU / 4 GB RAM
-  Domain                  `lab.local`
-  NetBIOS Name            `LAB`
-  Server Role             Domain Controller
-  Directory Service       Active Directory Domain Services
-  Remote Administration   RDP
-  Management              Server Manager, ADUC, GPMC, PowerShell
 
 ------------------------------------------------------------------------
 
@@ -315,10 +300,6 @@ Organization Unit
     Group name -> OK
 
 <img width="1168" height="869" alt="vm27" src="https://github.com/user-attachments/assets/a9bae3ab-0fc5-48d5-9675-d1cdcd684dfc" />
-
-
-
-
 
 ### Why This Matters
 
