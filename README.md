@@ -249,29 +249,12 @@ Manage
 <img width="599" height="430" alt="vm17" src="https://github.com/user-attachments/assets/7364f748-3383-49c8-8cf7-b14ce0784f44" />
 
 PowerShell alternative:
-
-``` powershell
-Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
-```
 <img width="591" height="548" alt="vm18" src="https://github.com/user-attachments/assets/0cbea021-68b4-4280-945d-2db0ea8c5dea" />
+
+    Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 <img width="958" height="550" alt="vm19" src="https://github.com/user-attachments/assets/a333fe08-0d0d-4d48-9af1-4793594cd769" />
 
 Install the Group Policy Management Console:
-
-
-``` powershell
-Install-WindowsFeature -Name GPMC
-```
-
-### Validation
-
-Confirm the required Windows features are installed:
-
-``` powershell
-Get-WindowsFeature AD-Domain-Services, GPMC
-```
-
-------------------------------------------------------------------------
 
 ## Phase 3 --- Promote the Server to a Domain Controller
 
@@ -280,84 +263,62 @@ From Server Manager:
 ``` text
 Notifications
 → Promote this server to a domain controller
-→ Add a new forest
 ```
+<img width="439" height="334" alt="vm20" src="https://github.com/user-attachments/assets/8803eede-577b-49e2-adcf-518f686891f5" />
 
 Configure:
 
 ``` text
+Add a new forest
 Root domain name: lab.local
-NetBIOS name: LAB
-DNS: Installed
+Next
 ```
+<img width="574" height="424" alt="vm21" src="https://github.com/user-attachments/assets/d2b464a7-6717-4eb4-8862-ae853a2ee6d2" />
+
 
 Set a secure **Directory Services Restore Mode (DSRM)** password and
 complete the promotion.
 
-The server restarts automatically.
+    Next -> Install
 
-PowerShell alternative:
+<img width="653" height="431" alt="vm22" src="https://github.com/user-attachments/assets/7042346b-3746-4453-b139-227beffbdea5" />
 
-``` powershell
-Import-Module ADDSDeployment
+<img width="574" height="428" alt="vm23" src="https://github.com/user-attachments/assets/d938c2fd-b61c-47d7-81d2-2c1029ade698" />
 
-Install-ADDSForest `
-    -DomainName "lab.local" `
-    -DomainNetBiosName "LAB" `
-    -InstallDns:$true `
-    -SafeModeAdministratorPassword (Read-Host -AsSecureString "Enter DSRM password") `
-    -Force:$true
-```
 
-> Never hard-code administrative or DSRM passwords in scripts committed
-> to GitHub.
-
-### Validation
-
-``` powershell
-Get-ADDomain
-Get-ADForest
-Get-ADDomainController
-```
-
-Expected domain:
-
-``` text
-lab.local
-```
+The server restarts automatically 
 
 ------------------------------------------------------------------------
 
 ## Phase 4 --- Build the Organizational Unit Structure
 
-Launch:
-
 ``` text
 Server Manager
-→ Tools
+→ AD DS
 → Active Directory Users and Computers
 ```
+<img width="998" height="472" alt="vm24" src="https://github.com/user-attachments/assets/e8f486ae-23f8-4245-b9ca-247010a79afa" />
 
 Create the following OUs:
 
 ``` text
 lab.local
-├── IT
-├── Finance
-├── HR
-├── Sales
-└── Computers
+New
+Organization Unit
 ```
+<img width="710" height="440" alt="vm25" src="https://github.com/user-attachments/assets/d96e9cb1-86fe-496d-9b5e-8f50b863bc6f" />
 
-PowerShell:
+    Name -> OK
 
-``` powershell
-New-ADOrganizationalUnit -Name "IT"        -Path "DC=lab,DC=local"
-New-ADOrganizationalUnit -Name "Finance"   -Path "DC=lab,DC=local"
-New-ADOrganizationalUnit -Name "HR"        -Path "DC=lab,DC=local"
-New-ADOrganizationalUnit -Name "Sales"     -Path "DC=lab,DC=local"
-New-ADOrganizationalUnit -Name "Computers" -Path "DC=lab,DC=local"
-```
+<img width="734" height="437" alt="vm26" src="https://github.com/user-attachments/assets/b384cdca-a292-4ebd-b9cc-e0988044f58f" />
+
+    Group name -> OK
+
+<img width="1168" height="869" alt="vm27" src="https://github.com/user-attachments/assets/a9bae3ab-0fc5-48d5-9675-d1cdcd684dfc" />
+
+
+
+
 
 ### Why This Matters
 
@@ -468,16 +429,7 @@ Add-ADGroupMember -Identity "HR_Users" -Members "carol.jones"
 Add-ADGroupMember -Identity "Sales_Users" -Members "david.smith"
 ```
 
-### Validate Provisioning
-
-``` powershell
-Get-ADUser -Filter * -SearchBase "DC=lab,DC=local"
-
-Get-ADGroupMember -Identity "IT_Admins"
-Get-ADGroupMember -Identity "Finance_Users"
-Get-ADGroupMember -Identity "HR_Users"
-Get-ADGroupMember -Identity "Sales_Users"
-```
+###
 
 ------------------------------------------------------------------------
 
