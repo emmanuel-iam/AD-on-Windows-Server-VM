@@ -218,6 +218,7 @@ Remote Desktop Connection
 <img width="314" height="173" alt="VM12" src="https://github.com/user-attachments/assets/0ef7c058-9419-41bc-9f99-1d1e91106f62" />
 
 <img width="301" height="374" alt="vm13" src="https://github.com/user-attachments/assets/22e42a73-b64a-4356-b5be-7c55c608158c" />
+
 This allows commands to be copied between the local workstation and the
 lab VM.
 
@@ -256,9 +257,6 @@ Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 <img width="958" height="550" alt="vm19" src="https://github.com/user-attachments/assets/a333fe08-0d0d-4d48-9af1-4793594cd769" />
 
 Install the Group Policy Management Console:
-
-<img width="439" height="334" alt="vm20" src="https://github.com/user-attachments/assets/cb1ee2cc-3ff4-4803-93b6-b4e27eba84f7" />
-<img width="574" height="424" alt="vm21" src="https://github.com/user-attachments/assets/cde65313-b597-4e59-824f-854ba167fc04" />
 
 
 ``` powershell
