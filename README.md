@@ -502,6 +502,10 @@ Set-ADUser -Identity "bob.patel" -ChangePasswordAtLogon $true
 
 ## Step 13 --- Unlock an Account
 
+```text
+Right click Users Name -> Properties
+Account -> Unlock account -> OK
+```
 <img width="1144" height="809" alt="vm50" src="https://github.com/user-attachments/assets/19d9d070-18c1-41a6-b3a4-664cd75c1cdf" />
 
 <img width="1163" height="858" alt="vm51" src="https://github.com/user-attachments/assets/4c35ea27-60eb-491a-9d5c-272c153700cc" />
@@ -511,29 +515,18 @@ Set-ADUser -Identity "bob.patel" -ChangePasswordAtLogon $true
 Unlock-ADAccount -Identity "carol.jones"
 ```
 
-### Screenshot
-
-``` markdown
-![Account Unlock](screenshots/13-account-unlock.png)
-```
-
 ## Step 14 --- Disable an Account for Offboarding
 
 ``` powershell
+# Disable an account
 Disable-ADAccount -Identity "david.smith"
-```
 
-Validate:
-
-``` powershell
+# Find all currently disabled accounts
 Search-ADAccount -AccountDisabled | Select-Object Name, SamAccountName
 ```
 
-### Screenshot
+<img width="1901" height="1220" alt="vm53" src="https://github.com/user-attachments/assets/bed3eff4-ad59-498e-9950-860fb111d2da" />
 
-``` markdown
-![Disabled User Account](screenshots/14-account-disabled.png)
-```
 
 The lifecycle model is:
 
