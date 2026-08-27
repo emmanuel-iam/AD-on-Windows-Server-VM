@@ -266,16 +266,14 @@ Root domain: lab.local
 NetBIOS: LAB
 DNS: Installed
 ```
-<img width="591" height="548" alt="vm18" src="https://github.com/user-attachments/assets/b276672a-81f5-453e-b90a-110101995c06" />
 
-<img width="653" height="431" alt="vm22" src="https://github.com/user-attachments/assets/04413c59-69be-4a79-8332-ccb89596925e" />
+<img width="574" height="424" alt="vm21" src="https://github.com/user-attachments/assets/bc37840e-c06b-49f7-b914-52f870c8c624" />
 
-### Screenshot
+<img width="653" height="431" alt="vm22" src="https://github.com/user-attachments/assets/27188f4b-6343-4553-bd35-50b5d01eb73c" />
 
-``` markdown
-![Domain Controller Promotion](screenshots/04-domain-controller.png)
-```
+<img width="574" height="428" alt="vm23" src="https://github.com/user-attachments/assets/8c97f4bb-7446-48a1-837e-4a1f9f70ffd1" />
 
+<img width="998" height="472" alt="vm24" src="https://github.com/user-attachments/assets/ad274077-10e2-40f9-bb03-48731fae7fa2" />
 Secure PowerShell alternative:
 
 ``` powershell
@@ -309,6 +307,8 @@ Open:
 Server Manager → Tools → Active Directory Users and Computers
 ```
 
+<img width="998" height="472" alt="vm24" src="https://github.com/user-attachments/assets/c6038c71-f2a5-4558-a71d-a432e887cfed" />
+
 Create:
 
 ``` text
@@ -320,11 +320,10 @@ lab.local
 └── Computers
 ```
 
-### Screenshot
+<img width="710" height="440" alt="vm25" src="https://github.com/user-attachments/assets/344b23d1-749f-4bce-a0a7-911aa74bc034" />
 
-``` markdown
-![Active Directory OU Structure](screenshots/05-ou-structure.png)
-```
+<img width="734" height="437" alt="vm26" src="https://github.com/user-attachments/assets/9ae2fed1-a51e-4d11-a3cb-5f7fbe1811ed" />
+
 
 PowerShell:
 
