@@ -408,6 +408,13 @@ New-ADUser -Name "david.smith" -GivenName "David" -Surname "Smith" `
 
 ## Step 8 --- Configure Group Policy 
 
+| Control | Lab Value |
+|---|---|
+| Minimum password length | 12 |
+| Password complexity | Enabled |
+| Machine inactivity limit | 900 seconds |
+| Removable storage | Deny access |
+
 Open:
 
 ``` text
@@ -455,15 +462,9 @@ Define this policy setting -> Enable -> Apply -> OK
 
 <img width="1188" height="873" alt="vm45" src="https://github.com/user-attachments/assets/b277947e-9263-4bec-a4d4-9fe3d363af95" />
 
+<img width="1560" height="786" alt="vm46" src="https://github.com/user-attachments/assets/c85391dd-ddb4-401b-bdba-ea8ca6032f1d" />
 
-The lab includes:
-
-  Control                        Lab Value
-  -------------------------- -------------
-  Minimum password length               12
-  Password complexity              Enabled
-  Machine inactivity limit     900 seconds
-  Removable storage            Deny access
+<img width="1028" height="970" alt="vm47" src="https://github.com/user-attachments/assets/0afe3be0-dcaf-49d6-970a-ca542f243340" />
 
 ### Important AD Design Note
 
@@ -479,67 +480,18 @@ This distinction makes the portfolio documentation reflect
 production-quality AD design rather than reproducing a learning lab
 without context.
 
-## Step 10 --- Join a Windows Workstation to `lab.local`
+## Step 09 --- Reset a Password
 
-Configure the workstation to use the Domain Controller for DNS, then
-join:
+Navigate to a User:
 
-``` text
-System Properties
-→ Computer Name
-→ Change
-→ Member of: Domain
-→ lab.local
+```text
+Right click User name -> Reset Password
+Put in new Password
 ```
 
-Restart after the successful join.
+<img width="1114" height="799" alt="vm48" src="https://github.com/user-attachments/assets/829b89f5-f5bc-48d7-a5f1-f948681f1f29" />
 
-### Screenshot
-
-``` markdown
-![Windows Domain Join](screenshots/10-domain-join.png)
-```
-
-### Validation
-
-``` powershell
-systeminfo | findstr /B /C:"Domain"
-```
-
-Expected:
-
-``` text
-Domain: lab.local
-```
-
-**IAM significance:** Domain joining establishes a trust relationship
-between the endpoint and Active Directory so centralized authentication
-and policy enforcement can occur.
-
-## Step 11 --- Validate Group Policy
-
-On the target workstation:
-
-``` powershell
-gpupdate /force
-gpresult /r
-```
-
-Optional HTML report:
-
-``` powershell
-gpresult /h C:\gp-report.html
-```
-
-### Screenshot
-
-``` markdown
-![Group Policy Validation](screenshots/11-gpo-validation.png)
-```
-
-# Identity Lifecycle Administration
-
-## Step 12 --- Reset a Password
+<img width="634" height="400" alt="vm49" src="https://github.com/user-attachments/assets/dd0e39a9-446a-4fc0-8db8-f864a9b63744" />
 
 ``` powershell
 $newPassword = Read-Host "Enter new temporary password" -AsSecureString
@@ -548,15 +500,14 @@ Set-ADAccountPassword -Identity "bob.patel" -Reset -NewPassword $newPassword
 Set-ADUser -Identity "bob.patel" -ChangePasswordAtLogon $true
 ```
 
-### Screenshot
-
-``` markdown
-![Password Reset](screenshots/12-password-reset.png)
-```
-
 ## Step 13 --- Unlock an Account
 
+<img width="1144" height="809" alt="vm50" src="https://github.com/user-attachments/assets/19d9d070-18c1-41a6-b3a4-664cd75c1cdf" />
+
+<img width="1163" height="858" alt="vm51" src="https://github.com/user-attachments/assets/4c35ea27-60eb-491a-9d5c-272c153700cc" />
+
 ``` powershell
+# Unlock a lock account
 Unlock-ADAccount -Identity "carol.jones"
 ```
 
