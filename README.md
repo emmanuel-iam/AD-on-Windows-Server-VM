@@ -430,34 +430,31 @@ Server Manager → Tools → Group Policy Management
 
 <img width="912" height="795" alt="vm40" src="https://github.com/user-attachments/assets/80ac6b65-fe09-4cd1-90f1-f522a5a03181" />
 
-
-``` powershell
-Add-ADGroupMember -Identity "IT_Admins" -Members "alice.chen"
-Add-ADGroupMember -Identity "Finance_Users" -Members "bob.patel"
-Add-ADGroupMember -Identity "HR_Users" -Members "carol.jones"
-Add-ADGroupMember -Identity "Sales_Users" -Members "david.smith"
-```
-
-### Validation
-
-``` powershell
-Get-ADGroupMember "IT_Admins"
-Get-ADGroupMember "Finance_Users"
-Get-ADGroupMember "HR_Users"
-Get-ADGroupMember "Sales_Users"
-```
-
-Navigate to the IT OU and create:
+Navigate back to Password Policy:
 
 ``` text
-IT Security Policy
+Password Policy -> Password must meet complexity -> Properties
+Define this policy setting -> Enable -> Apply -> OK
 ```
 
-### Screenshot
+<img width="1193" height="822" alt="vm41" src="https://github.com/user-attachments/assets/b00978cd-627a-492f-aa2f-12ee28289429" />
 
-``` markdown
-![IT Security Policy](screenshots/09-it-security-policy.png)
+<img width="682" height="810" alt="vm42" src="https://github.com/user-attachments/assets/f9dcebb9-8664-49a3-911d-30a584a901b1" />
+
+```text 
+
+
 ```
+<img width="1148" height="699" alt="vm43" src="https://github.com/user-attachments/assets/de456e48-57bf-4ad9-8fe7-d0df9e9195ee" />
+
+<img width="679" height="765" alt="vm44" src="https://github.com/user-attachments/assets/d237ee18-8824-4d8b-8f1a-144e221c1795" />
+
+```text
+
+```
+
+<img width="1188" height="873" alt="vm45" src="https://github.com/user-attachments/assets/b277947e-9263-4bec-a4d4-9fe3d363af95" />
+
 
 The lab includes:
 
