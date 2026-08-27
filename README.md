@@ -273,7 +273,6 @@ DNS: Installed
 
 <img width="574" height="428" alt="vm23" src="https://github.com/user-attachments/assets/8c97f4bb-7446-48a1-837e-4a1f9f70ffd1" />
 
-<img width="998" height="472" alt="vm24" src="https://github.com/user-attachments/assets/ad274077-10e2-40f9-bb03-48731fae7fa2" />
 Secure PowerShell alternative:
 
 ``` powershell
