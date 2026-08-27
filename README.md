@@ -98,22 +98,22 @@ flowchart TB
 
 ## IAM Concepts Demonstrated
 
-  IAM Concept             Implementation
-  ----------------------- -------------------------------------------
-  Centralized Identity    Active Directory Domain Services
-  Authentication          Windows domain authentication
-  Authorization           Security-group membership
-  RBAC Foundation         Department-based security groups
-  Least Privilege         Access organized around role requirements
-  Identity Organization   Departmental OUs
-  Policy Enforcement      Group Policy
-  Joiner                  Create account + assign group
-  Mover                   Modify group/OU membership
-  Leaver                  Disable account
-  Credential Management   Password reset
-  Account Recovery        Account unlock
-  Audit / Reporting       AD PowerShell queries
-  Automation              PowerShell AD cmdlets
+| IAM Concept | Implementation |
+|---|---|
+| Centralized Identity | Active Directory Domain Services |
+| Authentication | Windows domain authentication |
+| Authorization | Security-group membership |
+| RBAC Foundation | Department-based security groups |
+| Least Privilege | Access organized around role requirements |
+| Identity Organization | Departmental OUs |
+| Policy Enforcement | Group Policy |
+| Joiner | Create account + assign group |
+| Mover | Modify group/OU membership |
+| Leaver | Disable account |
+| Credential Management | Password reset |
+| Account Recovery | Account unlock |
+| Audit / Reporting | AD PowerShell queries |
+| Automation | PowerShell AD cmdlets |
 
 ## Technologies Used
 
@@ -130,17 +130,17 @@ flowchart TB
 
 ## Lab Environment
 
-  Component        Configuration
-  ---------------- -----------------------------------------
-  Cloud            Microsoft Azure
-  Server OS        Windows Server 2025 Datacenter --- Gen2
-  VM Size          Standard_B2s
-  Domain           `lab.local`
-  NetBIOS          `LAB`
-  Server Role      Domain Controller
-  Directory        Active Directory Domain Services
-  Administration   Server Manager / PowerShell
-  Remote Access    RDP
+| Component | Configuration |
+|---|---|
+| Cloud | Microsoft Azure |
+| Server OS | Windows Server 2025 Datacenter — Gen2 |
+| VM Size | Standard_B2s |
+| Domain | `lab.local` |
+| NetBIOS | `LAB` |
+| Server Role | Domain Controller |
+| Directory | Active Directory Domain Services |
+| Administration | Server Manager / PowerShell |
+| Remote Access | RDP |
 
 ## Project Objectives
 
@@ -167,21 +167,36 @@ From Azure:
 ``` text
 Virtual Machines → Create → Azure Virtual Machine
 ```
+<img width="857" height="266" alt="VM1" src="https://github.com/user-attachments/assets/92a219a2-28f5-445c-a81b-52bae50e69ba" />
 
-  Setting          Lab Configuration
-  ---------------- -----------------------------------------
-  Region           East US
-  Image            Windows Server 2025 Datacenter --- Gen2
-  Size             Standard_B2s
-  Authentication   Password
-  Inbound Port     RDP / TCP 3389
-  OS Disk          Standard SSD
+<img width="707" height="404" alt="VM2" src="https://github.com/user-attachments/assets/36b66418-7dce-4f5c-8b40-9f1f8d17d1a6" />
 
-### Screenshot
+  | Setting | Lab Configuration |
+|---|---|
+| Region | East US |
+| Image | Windows Server 2025 Datacenter — Gen2 |
+| Size | Standard_B2s |
+| Authentication | Password |
+| Inbound Port | RDP / TCP 3389 |
+| OS Disk | Standard SSD |
 
-``` markdown
-![Azure Windows Server VM](screenshots/01-azure-vm.png)
-```
+<img width="787" height="563" alt="VM3" src="https://github.com/user-attachments/assets/8e15b589-3fc5-4002-8360-2c69c308629c" />
+
+<img width="676" height="545" alt="VM4" src="https://github.com/user-attachments/assets/6f654778-473a-4622-bee9-e14af2e11be6" />
+
+<img width="596" height="552" alt="vm5" src="https://github.com/user-attachments/assets/87d4bad8-9d45-4ab2-bd0e-b4189afc6879" />
+
+<img width="1096" height="413" alt="VM6" src="https://github.com/user-attachments/assets/81199824-ae35-4c49-8443-8f4bd5e25142" />
+
+<img width="981" height="244" alt="VM7" src="https://github.com/user-attachments/assets/4ead4b66-dbef-4e3a-9887-46525e0a16df" />
+
+<img width="886" height="501" alt="VM8" src="https://github.com/user-attachments/assets/9088d6ba-f0c5-4ce5-ac93-7494f6eda2f6" />
+
+<img width="598" height="309" alt="VM9" src="https://github.com/user-attachments/assets/fb42e73f-9aa8-4193-a42b-086c351bc64b" />
+
+<img width="425" height="340" alt="VM10" src="https://github.com/user-attachments/assets/9308349b-ddf8-42ef-956e-08724cc1a360" />
+
+<img width="923" height="553" alt="VM11" src="https://github.com/user-attachments/assets/e6355c25-da38-4a95-bd2a-1f14c4856ff4" />
 
 **What this demonstrates:** Deployment of cloud infrastructure required
 to host the identity environment.
@@ -191,17 +206,9 @@ to host the identity environment.
 Connect to the VM's public IP using the native Windows Remote Desktop
 client.
 
-For clipboard redirection:
+<img width="314" height="173" alt="VM12" src="https://github.com/user-attachments/assets/52ef4ee7-bc09-4614-a286-08885a21401f" />
 
-``` text
-Show Options → Local Resources → Clipboard
-```
-
-### Screenshot
-
-``` markdown
-![Remote Desktop Connection](screenshots/02-rdp-connection.png)
-```
+<img width="301" height="374" alt="vm13" src="https://github.com/user-attachments/assets/0756474f-bbb2-40f4-a630-8628a4139c22" />
 
 > **Security:** Internet-facing RDP should be tightly restricted in a
 > lab. Production environments should use controls such as Azure
@@ -216,6 +223,14 @@ From Server Manager:
 Manage → Add Roles and Features → Active Directory Domain Services → Install
 ```
 
+<img width="797" height="371" alt="vm14" src="https://github.com/user-attachments/assets/bbf855f7-7579-4ff5-9106-69615621dc1c" />
+
+<img width="526" height="426" alt="vm15" src="https://github.com/user-attachments/assets/df7e526d-995f-4c5d-a11a-4ddf5c9a3256" />
+
+<img width="346" height="325" alt="vm16" src="https://github.com/user-attachments/assets/5242f486-5482-410e-b040-889a378df924" />
+
+<img width="599" height="430" alt="vm17" src="https://github.com/user-attachments/assets/12aee040-8f60-4544-a1ab-599c09b2bed3" />
+
 PowerShell:
 
 ``` powershell
@@ -223,11 +238,9 @@ Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 Install-WindowsFeature -Name GPMC
 ```
 
-### Screenshot
+<img width="591" height="548" alt="vm18" src="https://github.com/user-attachments/assets/b276672a-81f5-453e-b90a-110101995c06" />
 
-``` markdown
-![AD DS Installation](screenshots/03-adds-installation.png)
-```
+<img width="1564" height="1213" alt="vm19" src="https://github.com/user-attachments/assets/3cf547b9-e37b-4c87-a282-3a923a6c3b41" />
 
 ### Validation
 
