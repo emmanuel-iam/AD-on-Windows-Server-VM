@@ -367,12 +367,12 @@ User → Business Role / Department → Security Group → Resource Permission
 
 ## Step 7 --- Provision Users
 
-  User          Department   Group
-  ------------- ------------ -----------------
-  Alice Chen    IT           `IT_Admins`
-  Bob Patel     Finance      `Finance_Users`
-  Carol Jones   HR           `HR_Users`
-  David Smith   Sales        `Sales_Users`
+ | User | Department | Group |
+|---|---|---|
+| Alice Chen | IT | `IT_Admins` |
+| Bob Patel | Finance | `Finance_Users` |
+| Carol Jones | HR | `HR_Users` |
+| David Smith | Sales | `Sales_Users` |
 
 <img width="1610" height="823" alt="vm28" src="https://github.com/user-attachments/assets/48f8b07b-46fa-4f21-a8be-bc81043a514f" />
 
@@ -381,8 +381,6 @@ User → Business Role / Department → Security Group → Resource Permission
 <img width="774" height="582" alt="vm30" src="https://github.com/user-attachments/assets/418e1b5f-8f75-4a1a-a81a-9936bb586b93" />
 
 <img width="750" height="584" alt="vm31" src="https://github.com/user-attachments/assets/a7f3d3f2-541d-4a86-93b5-20c7c15edd14" />
-
-<img width="1126" height="745" alt="vm32" src="https://github.com/user-attachments/assets/3fc8747a-d7e3-42f7-89da-d638bb45c5a2" />
 
 Secure example:
 
@@ -406,19 +404,32 @@ New-ADUser -Name "david.smith" -GivenName "David" -Surname "Smith" `
     -Path "OU=Sales,DC=lab,DC=local" -AccountPassword $password -Enabled $true
 ```
 
-## Step 8 --- Assign Group Membership
+<img width="1126" height="745" alt="vm32" src="https://github.com/user-attachments/assets/3fc8747a-d7e3-42f7-89da-d638bb45c5a2" />
+
+## Step 8 --- Configure Group Policy 
+
+<img width="2021" height="1209" alt="vm33" src="https://github.com/user-attachments/assets/f1f4108b-5786-4387-a9b3-726522568335" />
+
+<img width="1123" height="567" alt="vm34" src="https://github.com/user-attachments/assets/50a4d2e0-03d6-4521-96f1-d37b39aed811" />
+
+<img width="717" height="622" alt="vm35" src="https://github.com/user-attachments/assets/67b46da0-0c74-4f29-8d46-5a7c875208b3" />
+
+<img width="1148" height="869" alt="vm36" src="https://github.com/user-attachments/assets/11f2f4ae-4cfe-491a-9450-210418164e24" />
+
+<img width="596" height="275" alt="vm37" src="https://github.com/user-attachments/assets/5b0b1420-25ce-47e7-b938-08b51385458f" />
+
+<img width="1145" height="785" alt="vm38" src="https://github.com/user-attachments/assets/3178c6fe-4c02-4ad6-b7a7-9f4301e82802" />
+
+<img width="1211" height="779" alt="vm39" src="https://github.com/user-attachments/assets/95655836-70c5-4088-93f8-7f1de86c031b" />
+
+<img width="912" height="795" alt="vm40" src="https://github.com/user-attachments/assets/80ac6b65-fe09-4cd1-90f1-f522a5a03181" />
+
 
 ``` powershell
 Add-ADGroupMember -Identity "IT_Admins" -Members "alice.chen"
 Add-ADGroupMember -Identity "Finance_Users" -Members "bob.patel"
 Add-ADGroupMember -Identity "HR_Users" -Members "carol.jones"
 Add-ADGroupMember -Identity "Sales_Users" -Members "david.smith"
-```
-
-### Screenshot
-
-``` markdown
-![Department Group Membership](screenshots/08-group-membership.png)
 ```
 
 ### Validation
