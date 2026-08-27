@@ -339,18 +339,16 @@ administration, and provide scopes for Group Policy.
 
 ## Step 6 --- Create Security Groups
 
-  Department   Security Group
-  ------------ -----------------
-  IT           `IT_Admins`
-  Finance      `Finance_Users`
-  HR           `HR_Users`
-  Sales        `Sales_Users`
+ | Department | Security Group |
+|---|---|
+| IT | `IT_Admins` |
+| Finance | `Finance_Users` |
+| HR | `HR_Users` |
+| Sales | `Sales_Users` | 
 
-### Screenshot
+<img width="1130" height="800" alt="vm26 1" src="https://github.com/user-attachments/assets/d9a2ce7f-cd92-4147-9027-2e65badfa574" />
 
-``` markdown
-![Department Security Groups](screenshots/06-security-groups.png)
-```
+<img width="1168" height="869" alt="vm27" src="https://github.com/user-attachments/assets/61c8d803-6877-468b-8090-68b6938ba3ad" />
 
 PowerShell:
 
@@ -376,11 +374,15 @@ User → Business Role / Department → Security Group → Resource Permission
   Carol Jones   HR           `HR_Users`
   David Smith   Sales        `Sales_Users`
 
-### Screenshot
+<img width="1610" height="823" alt="vm28" src="https://github.com/user-attachments/assets/48f8b07b-46fa-4f21-a8be-bc81043a514f" />
 
-``` markdown
-![Active Directory Users](screenshots/07-user-accounts.png)
-```
+<img width="1103" height="775" alt="vm29" src="https://github.com/user-attachments/assets/e03f677f-56b6-4bc9-ae42-4d7ff96793a8" />
+
+<img width="774" height="582" alt="vm30" src="https://github.com/user-attachments/assets/418e1b5f-8f75-4a1a-a81a-9936bb586b93" />
+
+<img width="750" height="584" alt="vm31" src="https://github.com/user-attachments/assets/a7f3d3f2-541d-4a86-93b5-20c7c15edd14" />
+
+<img width="1126" height="745" alt="vm32" src="https://github.com/user-attachments/assets/3fc8747a-d7e3-42f7-89da-d638bb45c5a2" />
 
 Secure example:
 
