@@ -500,7 +500,7 @@ Set-ADAccountPassword -Identity "bob.patel" -Reset -NewPassword $newPassword
 Set-ADUser -Identity "bob.patel" -ChangePasswordAtLogon $true
 ```
 
-## Step 13 --- Unlock an Account
+## Step 10 --- Unlock an Account
 
 ```text
 Right click Users Name -> Properties
@@ -515,7 +515,15 @@ Account -> Unlock account -> OK
 Unlock-ADAccount -Identity "carol.jones"
 ```
 
-## Step 14 --- Disable an Account for Offboarding
+<img width="1901" height="1220" alt="vm53" src="https://github.com/user-attachments/assets/bed3eff4-ad59-498e-9950-860fb111d2da" />
+
+## Step 11 --- Disable an Account for Offboarding
+
+```text
+Right click Users Name -> Disable Account
+```
+
+<img width="568" height="396" alt="image" src="https://github.com/user-attachments/assets/d9532152-ead9-4178-94ca-59ac28369b98" />
 
 ``` powershell
 # Disable an account
@@ -525,18 +533,12 @@ Disable-ADAccount -Identity "david.smith"
 Search-ADAccount -AccountDisabled | Select-Object Name, SamAccountName
 ```
 
-<img width="1901" height="1220" alt="vm53" src="https://github.com/user-attachments/assets/bed3eff4-ad59-498e-9950-860fb111d2da" />
+<img width="2011" height="1224" alt="vm54" src="https://github.com/user-attachments/assets/4b80234d-f29c-4f42-997a-346d55202cb1" />
 
-
-The lifecycle model is:
-
-``` text
-Employee Leaves → Identity Disabled → Authentication Blocked → Access Reviewed/Removed
-```
 
 # Audit & Reporting
 
-## Step 15 --- Identify Inactive Accounts
+## Step 12 --- Identify Inactive Accounts
 
 ``` powershell
 $cutoff = (Get-Date).AddDays(-90)
