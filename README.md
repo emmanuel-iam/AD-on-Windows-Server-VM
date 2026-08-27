@@ -541,59 +541,29 @@ Search-ADAccount -AccountDisabled | Select-Object Name, SamAccountName
 ## Step 12 --- Identify Inactive Accounts
 
 ``` powershell
+# Find accounts that have not logged in for 90 days
 $cutoff = (Get-Date).AddDays(-90)
-
-Get-ADUser -Filter {LastLogonDate -lt $cutoff -and Enabled -eq $true} `
-    -Properties LastLogonDate |
-    Select-Object Name, SamAccountName, LastLogonDate
+Get-ADUser -Filter {LastLogonDate -lt $cutoff -and Enabled -eq $true} -Properties LastLogonDate | Select-Object Name, LastLogonDate
+ 
+# Check group membership for a specific user
+Get-ADPrincipalGroupMembership -Identity "alice.chen" | Select-Object Name
 ```
 
-### Screenshot
-
-``` markdown
-![Inactive Account Report](screenshots/15-inactive-accounts.png)
-```
-
-## Step 16 --- Review Group Membership
-
-``` powershell
-Get-ADPrincipalGroupMembership -Identity "alice.chen" |
-    Select-Object Name
-```
-
-### Screenshot
-
-``` markdown
-![Group Membership Audit](screenshots/16-access-review.png)
-```
+<img width="2024" height="1234" alt="vm56" src="https://github.com/user-attachments/assets/576c51e2-67d4-4d3a-bd96-79aa4298022c" />
 
 # Validation Checklist
 
   -----------------------------------------------------------------------------------------------------
-  Test                    Command / Method                                      Expected Result
-  ----------------------- ----------------------------------------------------- -----------------------
-  Domain Controller       `Get-ADDomainController`                              DC returned
-
-  Domain                  `Get-ADDomain`                                        `lab.local`
-
-  OUs                     `Get-ADOrganizationalUnit -Filter *`                  Department OUs
-
-  Enabled Users           `Get-ADUser -Filter {Enabled -eq $true}`              Active users
-
-  IT Group                `Get-ADGroupMember IT_Admins`                         `alice.chen`
-
-  GPO                     `Get-GPInheritance -Target "OU=IT,DC=lab,DC=local"`   IT policy linked
-
-  Domain Join             `systeminfo`                                          `lab.local`
-
-  Applied Policy          `gpresult /r`                                         Applicable GPOs
-  -----------------------------------------------------------------------------------------------------
-
-### Screenshot
-
-``` markdown
-![Final Lab Validation](screenshots/17-final-validation.png)
-```
+  | Test | Command / Method | Expected Result |
+|---|---|---|
+| Domain Controller | `Get-ADDomainController` | DC returned |
+| Domain | `Get-ADDomain` | `lab.local` |
+| OUs | `Get-ADOrganizationalUnit -Filter *` | Department OUs |
+| Enabled Users | `Get-ADUser -Filter {Enabled -eq $true}` | Active users |
+| IT Group | `Get-ADGroupMember IT_Admins` | `alice.chen` |
+| GPO | `Get-GPInheritance -Target "OU=IT,DC=lab,DC=local"` | IT policy linked |
+| Domain Join | `systeminfo` | `lab.local` |
+| Applied Policy | `gpresult /r` | Applicable GPOs |
 
 # Troubleshooting
 
@@ -651,27 +621,7 @@ Get-ADUser -Identity "alice.chen" -Properties Enabled,LockedOut,PasswordExpired
 
 Confirm account status, credentials, DNS, and domain connectivity.
 
-# Security Considerations
 
-This is a learning environment. Production Active Directory should
-include additional controls such as:
-
--   Multiple Domain Controllers
--   Dedicated privileged identities
--   Separate standard/admin accounts
--   Least-privilege delegated administration
--   Restricted Domain Admin membership
--   Windows LAPS
--   Secure privileged administrative access
--   Network segmentation
--   Centralized security logging
--   Domain-level password/lockout policy
--   Fine-Grained Password Policies when justified
--   Privileged-access reviews
--   AD backup and tested recovery
--   Stale-account monitoring
--   Protection of service accounts
--   No hard-coded credentials in scripts or repositories
 
 # Skills Demonstrated
 
@@ -767,19 +717,6 @@ active-directory-azure-iam-lab/
     └── troubleshooting.md
 ```
 
-# Adding Your Screenshots
-
-Upload your screenshots into the `screenshots/` directory. Each
-implementation step already contains a suggested image reference, for
-example:
-
-``` markdown
-![Active Directory OU Structure](screenshots/05-ou-structure.png)
-```
-
-You can either rename your screenshot to `05-ou-structure.png` or edit
-the Markdown path to match your filename.
-
 Before publishing screenshots, redact unnecessary:
 
 -   Public IP addresses
@@ -829,9 +766,3 @@ Directory into a modern hybrid identity architecture using Microsoft
 Entra ID, MFA, Conditional Access, SSO, Identity Governance, and
 privileged access controls.
 
-## Project Status
-
-**Completed --- Active Directory IAM Lab on Microsoft Azure**
-
-**Environment:** Windows Server 2025 · Active Directory Domain Services
-· Microsoft Azure · PowerShell · Group Policy
