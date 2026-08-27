@@ -408,6 +408,12 @@ New-ADUser -Name "david.smith" -GivenName "David" -Surname "Smith" `
 
 ## Step 8 --- Configure Group Policy 
 
+Open:
+
+``` text
+Server Manager → Tools → Group Policy Management
+```
+
 <img width="2021" height="1209" alt="vm33" src="https://github.com/user-attachments/assets/f1f4108b-5786-4387-a9b3-726522568335" />
 
 <img width="1123" height="567" alt="vm34" src="https://github.com/user-attachments/assets/50a4d2e0-03d6-4521-96f1-d37b39aed811" />
@@ -439,14 +445,6 @@ Get-ADGroupMember "IT_Admins"
 Get-ADGroupMember "Finance_Users"
 Get-ADGroupMember "HR_Users"
 Get-ADGroupMember "Sales_Users"
-```
-
-## Step 9 --- Configure Group Policy
-
-Open:
-
-``` text
-Server Manager → Tools → Group Policy Management
 ```
 
 Navigate to the IT OU and create:
