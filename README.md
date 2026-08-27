@@ -233,12 +233,12 @@ Manage → Add Roles and Features → Active Directory Domain Services → Insta
 
 PowerShell:
 
+<img width="591" height="548" alt="vm18" src="https://github.com/user-attachments/assets/b276672a-81f5-453e-b90a-110101995c06" />
+
 ``` powershell
 Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 Install-WindowsFeature -Name GPMC
 ```
-
-<img width="591" height="548" alt="vm18" src="https://github.com/user-attachments/assets/b276672a-81f5-453e-b90a-110101995c06" />
 
 <img width="1564" height="1213" alt="vm19" src="https://github.com/user-attachments/assets/3cf547b9-e37b-4c87-a282-3a923a6c3b41" />
 
@@ -256,6 +256,8 @@ Navigate to:
 Server Manager → Notifications → Promote this server to a domain controller
 ```
 
+<img width="439" height="334" alt="vm20" src="https://github.com/user-attachments/assets/dfb9d3e8-c725-4341-b905-e7811f04da61" />
+
 Configure:
 
 ``` text
@@ -264,6 +266,9 @@ Root domain: lab.local
 NetBIOS: LAB
 DNS: Installed
 ```
+<img width="591" height="548" alt="vm18" src="https://github.com/user-attachments/assets/b276672a-81f5-453e-b90a-110101995c06" />
+
+<img width="653" height="431" alt="vm22" src="https://github.com/user-attachments/assets/04413c59-69be-4a79-8332-ccb89596925e" />
 
 ### Screenshot
 
